@@ -1711,7 +1711,7 @@ Sept_X = SeptDataM[X]
 ```python
 X_train, X_test , y_train, y_test = cross_validation.train_test_split(Sept_X, Y, test_size=0.6, random_state=1)
 # Scale the data
-#X_reduced_train = ols.fit_transform(scale(X_train))
+X_reduced_train = ols.fit_transform(scale(X_train))
 ```
 
 - fit the model to the training set and then tested preformance
