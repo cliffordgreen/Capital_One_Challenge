@@ -1222,7 +1222,7 @@ Airport_Pickup[['Tip_amount', 'Tolls_amount','Total_amount','Payment_type']].his
 ### Analysis
 - Some quick things I noticed from the histograms. The distributions for extra charges seem to be about the same, as do passenger count, tip amount, and toll amount. Total amount varies a lot, which is explained by the difference in fare amount. There seem to be a disproportionate number of short trips leaving the airport, which might be worth spending more time looking at. The payment types also vary significantly, but I think that can again be explained by the fact that green taxis can’t be hailed at JFK and therefore must be booked in advance. 
 
-# Question 4
+# Question 4 V2
 
  - Build a derived variable for tip as a percentage of the total fare.
 
@@ -1952,7 +1952,7 @@ r2_score(y_test,pls.predict(scale(X_test)))
  
  a lot of the code I used to build the PCA/PCR models can be found in this [lab](http://www.science.smith.edu/~jcrouser/SDS293/labs/lab11/Lab%2011%20-%20PCR%20and%20PLS%20Regression%20in%20Python.pdf), I fugured that the models I wanted to run have definitely been run before, so why waste time trying to reinvent the wheel.
 
-# Question 5
+# Question 5 V2
 
 - Build a derived variable representing the average speed over the course of a trip.
 
@@ -2303,14 +2303,14 @@ SeptData7['Passenger_count'].groupby(SeptData7.index).count().plot.area(stacked=
 ![png](output_166_1.png)
 
 
-# Conclution
+# Conclution v2
 
 I am fairly happy with what I was able to accomplish in the allotted amount of time. The majority of these questions were more focused on cleaning than actual analytics. Question 1 was pretty straightforward and accomplished in a couple lines. Question 2 was also fairly simple. The histogram part was easy, the interesting part was creating a histogram that actually captured the data. This was done by cleaning the data. The ‘Trip Distance’ histogram ended up being very skewed, which makes sense because in a city like New York, many of the Taxi trips are shorter, I’m sure if you did the same thing with data from a place more spread out like San Diego, the results would be very different. Question 3 tripped me up a bit because I’ve never worked with date/time in python. All of the time series and data/time stuff I’ve done has been in R. I almost just exported the cleaned csv and then created a new markdown in R but I ended up deciding to push through. The median distances were all lower than the mean distances, meaning that there are a lot smaller Trip Distances and a few very large measurements, this is reflected again in the Histogram. Question 3 part 2 was a lot of fun. I ended up just creating that rectangle threshold for JFK. If I had more time I would definitely find a better method for doing this, maybe shapely or gmplot. A big drawback of larger datasets is runtime. 
 
 
-Question 4 Was pretty straightforward. Percentage tip was calculated by dividing it by Total Fare and then multiplying by 100. I then created multiple predictive models to estimate percentage tip. I think they performed fairly well, a .86 R^2 in the wild isn’t the best but it definitely isn’t bad. Question 5 wasn’t too bad; I just ran quick ANOVA between the 5 weeks in september. Part 3 I had already created the code for in Question 3, so I just changed added the new ‘Average Speed’ variable and was able to get the metrics I wanted. If I had more time I would definitely take a closer look at the Average speed between 4am to 6am. Thanks for this opportunity, It was a great learning experience and definitely a lot of fun.
+Question 4 Was pretty straightforward. Percentage tip was calculated by dividing it by Total Fare and then multiplying by 100. I then created multiple predictive models to estimate percentage tip. I think they performed fairly well, a .86 R^2 in the wild isn’t the best but it definitely isn’t bad. Question 5 wasn’t too bad; I just ran quick ANOVA between the 5 weeks in september. Part 3 I had already created the code for in Question 3, so I just changed added the new ‘Average Speed’ variable and was able to get the metrics I wanted. Looking at the data it becomes clear that there are fewer taxis taken during these hours, from this one might conclude that there are less car on the road, which would allow for a faster flow of traffic.
 
-### Further Exploration
+### Further Exploration v2
 
 - I would like to break the data up by geographical areas and see which is contributing the most to those higher speed. I had some positive results using the Basemap package but the requency of dots got a little crazy, so if I were to do it would have to be by hour of day for one given day in order to extract any useful info from it. I posted the code below.
 
