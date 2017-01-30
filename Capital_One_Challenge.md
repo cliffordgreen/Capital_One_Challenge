@@ -1949,6 +1949,8 @@ r2_score(y_test,pls.predict(scale(X_test)))
 ### Analysis
 
  - Ultimately, I have provided two options for modeling tip percentage, the first is pretty bare bones, but it preforms nicely (partly because it can accurately predict when passengers wont tip). The other model I created combines two types of regression, the first creates a model for predicating if a passenger will tip, the second predicts how much the passage will tip. I think the R^2 is thrown off by the first models ability to predict no-tip trips, in the real world I would probably be more comfortable using the two step method. I also like the second method because it was a lot more fun to build. 
+ 
+ a lot of the code I used to build the PCA/PCR models can be found in this [lab](http://www.science.smith.edu/~jcrouser/SDS293/labs/lab11/Lab%2011%20-%20PCR%20and%20PLS%20Regression%20in%20Python.pdf), I fugured that the models I wanted to run have definitely been run before, so why waste time trying to reinvent the wheel.
 
 # Question 5
 
